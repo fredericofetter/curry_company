@@ -146,30 +146,34 @@ with st.container():
                   .reset_index()
              )
     df_aux.columns = ['cuisines', 'mean_average_cost_for_two', 'mean_aggregate_rating', 'sum_has_online_delivery']
+    df_aux = df_aux.sort_values(by=['mean_aggregate_rating'], ascending=False)
+    #st.dataframe(df_aux)
 
 #-----------------
     
     col1, col2 = st.columns( 2 )
     
-    df_aux1 = df_aux.head( no_rest_viz )
+    no_couisines_bar = 10
+    
+    df_aux1 = df_aux.head( no_couisines_bar )
     
     histogram_option_x = 'cuisines'
     histogram_option_y = 'mean_aggregate_rating'
     column_depicted = histogram_option_x
     y_axis = histogram_option_y
-    fig = px.bar( df_aux1, x=column_depicted, y=y_axis, title='Melhores {} culinárias registradas'.format( no_rest_viz ) )
+    fig = px.bar( df_aux1, x=column_depicted, y=y_axis, title='Melhores {} culinárias registradas'.format( no_couisines_bar ) )
     fig.update_layout(xaxis={'categoryorder':'total descending'})
     fig.update_layout(yaxis_range=[0,5])
     col1.plotly_chart( fig, use_container_width=True )
 
     
-    df_aux2 = df_aux.tail( no_rest_viz )
+    df_aux2 = df_aux.tail( no_couisines_bar )
 
     histogram_option_x = 'cuisines'
     histogram_option_y = 'mean_aggregate_rating'
     column_depicted = histogram_option_x
     y_axis = histogram_option_y
-    fig = px.bar( df_aux2, x=column_depicted, y=y_axis, title='Piores {} culinárias registradas'.format( no_rest_viz ) )
+    fig = px.bar( df_aux2, x=column_depicted, y=y_axis, title='Piores {} culinárias registradas'.format( no_couisines_bar ) )
     fig.update_layout(xaxis={'categoryorder':'total ascending'})
     fig.update_layout(yaxis_range=[0,5])
     col2.plotly_chart( fig, use_container_width=True )
