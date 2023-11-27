@@ -99,26 +99,24 @@ cont_metric = st.container()
 col1, col2, col3, col4, col5 = cont_metric.columns( 5 )
 
 cuisine = 'Italian'
-string_1, string_2 = func_temp(cuisine, df1)
+string_1, string_2 = main_cuisines_metric_format(cuisine, df1)
 col1.metric(string_1, string_2)
-#max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-#col1.metric('Italiana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
 
 cuisine = 'American'
-max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-col2.metric('Americana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+string_1, string_2 = main_cuisines_metric_format(cuisine, df1)
+col2.metric(string_1, string_2)
 
 cuisine = 'Arabian'
-max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-col3.metric('Árabe: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+string_1, string_2 = main_cuisines_metric_format(cuisine, df1)
+col3.metric(string_1, string_2)
 
 cuisine = 'Japanese'
-max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-col4.metric('Japonesa: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+string_1, string_2 = main_cuisines_metric_format(cuisine, df1)
+col4.metric(string_1, string_2)
 
 cuisine = 'Brazilian'
-max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-col5.metric('Brasileira: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+string_1, string_2 = main_cuisines_metric_format(cuisine, df1)
+col5.metric(string_1, string_2)
 
 
 paises_selecionados = df1['country_code'].apply(country_name).isin( countries_selected )
