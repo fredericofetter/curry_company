@@ -78,7 +78,7 @@ no_rest_viz = st.sidebar.slider(
 
 
 cuisines_selected = st.sidebar.multiselect(
-    'Escolha as culinárias que deseja incluir nas visualizações', 
+    'Escolha as culinárias que deseja incluir na tabela dos melhores restaurantes', 
     get_cuisines(df1), default=['Home-made', 'BBQ', 'Japanese', 'Brazilian', 'Arabian', 'American', 'Italian']
 )
 
