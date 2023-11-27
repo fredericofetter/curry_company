@@ -146,16 +146,3 @@ df1 = df1[linhas_selecionadas]
     
 with st.container():
     plot_map(df1)
-
-
-##########################################################################################
-# TAREFAS
-##########################################################################################
-    
-    
-with st.container():
-    st.markdown('# Lista de tarefas e problemas')
-    st.markdown("- ajustar logo para incluir nome e transparência")
-    st.markdown("- incluir switch para converter moedas para dólar")
-    st.markdown("- Manter cores e ordens nos gráficos consistentes frente a atualizações")
-    st.markdown("- Formatar o número de avaliações feitas, incluindo pontos a cada três algarismos")
