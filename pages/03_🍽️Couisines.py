@@ -157,8 +157,9 @@ with st.container():
     histogram_option_y = 'mean_aggregate_rating'
     column_depicted = histogram_option_x
     y_axis = histogram_option_y
-    fig = px.bar( df_aux1, x=column_depicted, y=y_axis, title='Top {} culinárias registradas'.format( no_rest_viz ) )
+    fig = px.bar( df_aux1, x=column_depicted, y=y_axis, title='Melhores {} culinárias registradas'.format( no_rest_viz ) )
     fig.update_layout(xaxis={'categoryorder':'total descending'})
+    fig.update_layout(yaxis_range=[0,5])
     col1.plotly_chart( fig, use_container_width=True )
 
     
@@ -168,6 +169,7 @@ with st.container():
     histogram_option_y = 'mean_aggregate_rating'
     column_depicted = histogram_option_x
     y_axis = histogram_option_y
-    fig = px.bar( df_aux2, x=column_depicted, y=y_axis, title='Top {} culinárias registradas'.format( no_rest_viz ) )
+    fig = px.bar( df_aux2, x=column_depicted, y=y_axis, title='Piores {} culinárias registradas'.format( no_rest_viz ) )
     fig.update_layout(xaxis={'categoryorder':'total ascending'})
+    fig.update_layout(yaxis_range=[0,5])
     col2.plotly_chart( fig, use_container_width=True )
