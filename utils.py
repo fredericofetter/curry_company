@@ -289,3 +289,32 @@ def plot_cities_bars(df1, y_ax, n_top=10, agg_upper_cutoff=10, agg_lower_cutoff=
     st.plotly_chart( fig, use_container_width=True )
     
     return
+
+
+
+def func_temp(cuisine, df1):
+    max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+    string_1 = '{}: {}'.format(cuisine, max_rating_name), 
+    string_2 = '{}/5.0'.format(max_rating)
+    return string_1, string_2
+'''
+cuisine = 'Italian'
+max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+col1.metric('Italiana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+
+cuisine = 'American'
+max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+col2.metric('Americana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+
+cuisine = 'Arabian'
+max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+col3.metric('Árabe: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+
+cuisine = 'Japanese'
+max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+col4.metric('Japonesa: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+
+cuisine = 'Brazilian'
+max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+col5.metric('Brasileira: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+'''

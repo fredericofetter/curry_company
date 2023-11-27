@@ -99,8 +99,10 @@ cont_metric = st.container()
 col1, col2, col3, col4, col5 = cont_metric.columns( 5 )
 
 cuisine = 'Italian'
-max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
-col1.metric('Italiana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
+string_1, string_2 = func_temp(cuisine, df1)
+col1.metric(string_1, string_2)
+#max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
+#col1.metric('Italiana: {}'.format(max_rating_name), '{}/5.0'.format(max_rating))
 
 cuisine = 'American'
 max_rating_name, max_rating = get_best_restaurant(df1, cuisine)
